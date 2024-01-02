@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.topsections {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+    margin: 2%;
+}
+
+  .sectionC {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for components within sections */
+  .component {
+    margin-bottom: 20px;
+  }
+  
+  /* Adjustments for better visibility */
+  #map {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    margin-left: 10%;
+    width: 100%; /* Allow the map to fill available width */
+    height: 100%; /* Allow the map to fill available height */
+    min-width: 600px; /* Resetting min-width to allow full stretching */
+    min-height: 300px; /* Set a minimum height for better visibility */
+  }
+  .result-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd; /* Border for the whole table */
+  }
+  
+  .result-table th, .result-table td {
+    border: 1px solid #ddd; /* Borders for table cells */
+    padding: 8px;
+    text-align: center; /* Center-aligning the table cells */
+  }
+  
+  .result-table th {
+    background-color: #f2f2f2;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 10px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    position: fixed; /* Fixed positioning to keep it at the bottom */
+    bottom: 0; /* Align at the bottom of the viewport */
+    width: 100%; /* Take up the entire width of the viewport */
+  }
+
+  @media screen and (max-width: 768px) {
+    .topsections {
+      flex-direction: column;
+    }
+  
+    .sectionA, .sectionB, .sectionC {
+      flex: auto;
+      width: 100%; /* Ensure full width on smaller screens */
+    }
+  
+    .sectionC {
+        max-height: 50vh;
+        overflow-y: auto;
+        margin-bottom: 50px; /* Adjust the margin as needed */
+      }
+      .result-table {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+    
+      .result-table th, .result-table td {
+        width: 50%;
+        padding: 8px;
+        text-align: left;
+      }
+
+      #map {
+        margin-left: 0;
+        min-width: 300px;
+
+      }
+  }
+  
