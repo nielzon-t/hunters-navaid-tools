@@ -31,7 +31,7 @@ Hunters NavAid is a web application that helps users convert location coordinate
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/hunters-navaid.git
+    git clone https://github.com/nielzon-t/hunters-navaid-tools.git
     ```
 
 2. Open `index.html` in a web browser to start using the application.
