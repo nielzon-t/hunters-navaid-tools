@@ -187,9 +187,4 @@ function displayTableData(latitude, longitude, location, mgrs) {
     }
   }
   
-
-  
-  
-  
-  
   

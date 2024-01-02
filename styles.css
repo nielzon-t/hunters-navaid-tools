@@ -4,6 +4,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
   
 .topsections {
@@ -13,10 +14,12 @@ body {
     margin: 2%;
 }
 
-  .sectionC {
-    flex-direction: column;
-    align-items: center;
-  }
+.sectionC {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1%;
+  padding-left: 5%; /* Adjust padding as needed */
+}
   
   /* Styling for components within sections */
   .component {
@@ -54,9 +57,9 @@ body {
     font-size: 10px;
     background-color: #f0f0f0;
     padding: 5px;
-    position: fixed; /* Fixed positioning to keep it at the bottom */
-    bottom: 0; /* Align at the bottom of the viewport */
-    width: 100%; /* Take up the entire width of the viewport */
+    width: 100%;
+    position: relative; /* Set position to relative */
+    bottom: 0;
   }
 
   @media screen and (max-width: 768px) {
@@ -70,10 +73,12 @@ body {
     }
   
     .sectionC {
-        max-height: 50vh;
-        overflow-y: auto;
-        margin-bottom: 50px; /* Adjust the margin as needed */
-      }
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto; /* Add vertical scrollbar when content overflows */
+      max-height: calc(100vh - 100px); /* Adjust as needed to maintain space between table and footer */
+      padding-bottom: 20px; /* Adjust padding as necessary */
+    }
       .result-table {
         display: grid;
         grid-template-columns: auto auto;
