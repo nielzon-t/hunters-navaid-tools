@@ -1,12 +1,72 @@
 let map;
+let marker;
 
 function initMap() {
-    const defaultLocation = { lat: 14.5995, lng: 120.9842 };
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: defaultLocation,
-      zoom: 8,
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 14.5995, lng: 120.9842 },
+    zoom: 8,
+  });
+
+  map.addListener('click', function (event) {
+    placeMarker(event.latLng);
+    console.log('map is clicked')
+  });
+}
+
+function placeMarker(location) {
+  if (marker) {
+    marker.setPosition(location);
+  } else {
+    marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      draggable: true,
     });
   }
+
+  updateTable(marker.getPosition());
+}
+
+function placeMarker(location) {
+  if (marker) {
+    marker.setPosition(location);
+  } else {
+    marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      draggable: true,
+    });
+  }
+
+  updateTable(marker.getPosition());
+  getLocationNameAndMGRS(location);
+}
+
+function getLocationNameAndMGRS(location) {
+  const geocoder = new google.maps.Geocoder();
+  
+  geocoder.geocode({ location: location }, function (results, status) {
+    if (status === google.maps.GeocoderStatus.OK && results[0]) {
+      const locationName = results[0].formatted_address;
+      const mgrsResult = mgrs.forward([location.lng(), location.lat()]); // Using mgrs library to get MGRS
+  
+      // Update the table with location name and MGRS
+      document.getElementById('location').innerText = locationName;
+      document.getElementById('mgrs').innerText = mgrsResult;
+    } else {
+      console.error('Geocoder failed with status: ' + status);
+    }
+  });
+}
+
+function updateTable(location) {
+  const latitude = location.lat().toFixed(6);
+  const longitude = location.lng().toFixed(6);
+
+  document.getElementById('latitude').innerText = latitude;
+  document.getElementById('longitude').innerText = longitude;
+}
+
 
 function setMapLocation(latitude, longitude) {
   const location = new google.maps.LatLng(latitude, longitude);
@@ -127,8 +187,7 @@ function displayTableData(latitude, longitude, location, mgrs) {
     }
   }
   
-  
-  
+
   
   
   
