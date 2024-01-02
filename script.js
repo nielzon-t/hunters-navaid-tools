@@ -9,7 +9,6 @@ function initMap() {
 
   map.addListener('click', function (event) {
     placeMarker(event.latLng);
-    console.log('map is clicked')
   });
 }
 
