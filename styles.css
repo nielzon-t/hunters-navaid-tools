@@ -12,7 +12,17 @@ body {
     flex-direction: row;
     margin: 3% auto;
     padding: 2%;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
+
+.sectionA {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 .sectionC {
   flex-grow: 1;
@@ -29,9 +39,9 @@ body {
   /* Adjustments for better visibility */
   #map {
     flex-grow: 1;
-    border: 1px solid #ccc;
-    margin-left: 10%;
-    width: 100%; /* Allow the map to fill available width */
+    border: 2px solid black;
+    margin-left: 3%;
+    width: 110%; /* Allow the map to fill available width */
     height: 100%; /* Allow the map to fill available height */
     min-width: 600px; /* Resetting min-width to allow full stretching */
     min-height: 300px; /* Set a minimum height for better visibility */
@@ -96,11 +106,11 @@ body.dark-theme button {
 
 #darkModeBtn {
   position: fixed;
-  top: 20px;
+  top: 12px;
   right: 20px;
+  border: 1px solid gray;
   z-index: 1000;
   padding: 10px;
-  border: none;
   border-radius: 20px; /* Rounded border */
   background-color: #f2f2f1; /* Light background color for the button */
   color: #333333; /* Dark font color for the button */
@@ -156,9 +166,13 @@ body.dark-theme {
   
     .sectionA, .sectionB, .sectionC {
       flex: auto;
-      width: 100%; /* Ensure full width on smaller screens */
+      width: 90%; /* Ensure full width on smaller screens */
     }
-  
+
+    .sectionB {
+      width: 92%;
+    }
+
     .sectionC {
       flex-direction: column;
       align-items: center;
@@ -175,6 +189,14 @@ body.dark-theme {
         width: 50%;
         padding: 8px;
         text-align: left;
+      }
+
+      #darkModeBtn {
+        position: absolute;
+        top: 30px;
+        right: 16px;
+        font-size: 9px;
+        padding: 3px;
       }
 
       #map {
