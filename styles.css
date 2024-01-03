@@ -10,8 +10,8 @@ body {
 .topsections {
     display: flex;
     flex-direction: row;
-    margin: 3% auto;
-    padding: 2%;
+    margin: 0 auto;
+    padding: 1% 2% 2% 2%;
     padding-bottom: 0;
     margin-bottom: 0;
 }
