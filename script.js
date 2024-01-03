@@ -186,4 +186,42 @@ function displayTableData(latitude, longitude, location, mgrs) {
     }
   }
   
+  document.getElementById('darkModeBtn').addEventListener('click', toggleDarkMode);
+
+  function toggleDarkMode() {
+      const body = document.body;
+      const darkModeButton = document.getElementById('darkModeBtn');
+  
+      if (body.classList.contains('dark-theme')) {
+          body.classList.remove('dark-theme');
+          body.classList.add('light-theme');
+          updateColors('light-theme');
+          darkModeButton.innerText = 'Dark Mode'; // Change text to 'Dark Mode'
+      } else {
+          body.classList.remove('light-theme');
+          body.classList.add('dark-theme');
+          updateColors('dark-theme');
+          darkModeButton.innerText = 'Light Mode'; // Change text to 'Light Mode'
+      }
+  }
+
+function updateColors(theme) {
+  const elementsToChange = document.querySelectorAll('.element-to-change-color');
+  elementsToChange.forEach(element => {
+      if (theme === 'dark-theme') {
+          element.style.transition = 'color 0.3s ease-in-out'; // Smooth transition
+          
+          // Change to white or another suitable light color
+          element.style.color = '#ffffff'; 
+          // Change background colors, border colors, or other color properties for visibility
+      } else {
+          element.style.transition = 'color 0.3s ease-in-out'; // Smooth transition
+          
+          // Change to black or another suitable dark color
+          element.style.color = '#000000'; 
+          // Reset other color properties as needed for the light theme
+      }
+  });
+}
+
   

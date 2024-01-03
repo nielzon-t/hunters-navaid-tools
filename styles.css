@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,8 +10,8 @@ body {
 .topsections {
     display: flex;
     flex-direction: row;
-    padding: 5%;
-    margin: 2%;
+    margin: 3% auto;
+    padding: 2%;
 }
 
 .sectionC {
@@ -25,7 +25,7 @@ body {
   .component {
     margin-bottom: 20px;
   }
-  
+
   /* Adjustments for better visibility */
   #map {
     flex-grow: 1;
@@ -61,6 +61,93 @@ body {
     position: relative; /* Set position to relative */
     bottom: 0;
   }
+  /* Default light theme */
+body {
+  background-color: ghostwhite; /* Light background color */
+  color: #000000; /* Dark font color */
+  /* Other light theme styles */
+}
+
+/* Dark theme */
+body.dark-theme {
+  background-color: #333333; /* Dark background color */
+  color: #ffffff; /* Light font color */
+  /* Other dark theme styles */
+}
+
+button {
+  border-radius: 15px;
+  padding: 7px;
+  border: 1px solid grey;
+  background-color: white;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #dddddd; /* Lighter background color on hover */
+  color: #000000; /* Darker font color on hover */
+}
+
+body.dark-theme button {
+  background-color: #333333; /* Dark background color for the button in dark mode */
+  color: #ffffff; /* Light font color for the button in dark mode */
+}
+
+#darkModeBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
+  border: none;
+  border-radius: 20px; /* Rounded border */
+  background-color: #f2f2f1; /* Light background color for the button */
+  color: #333333; /* Dark font color for the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Styles for button in dark mode */
+body.dark-theme #darkModeBtn {
+  background-color: #333333; /* Dark background color for the button in dark mode */
+  color: #ffffff; /* Light font color for the button in dark mode */
+}
+
+/* Hover animation */
+#darkModeBtn:hover {
+  background-color: #dddddd; /* Lighter background color on hover */
+  color: #000000; /* Darker font color on hover */
+  transform: scale(1.1); /* Scale animation on hover */
+}
+
+/* For table headers in dark mode */
+.dark-theme .result-table th {
+  color: #ffffff; /* White text for better visibility */
+  background-color: #333333; /* Dark background */
+}
+
+/* For footer text in dark mode */
+.dark-theme footer {
+  color: #ffffff; /* White text for better visibility */
+  background-color: #444444; /* Dark background */
+}
+
+/* Default light theme */
+body {
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  background-color: ghostwhite; /* Light background color */
+  color: #000000; /* Dark font color */
+  /* Other light theme styles */
+}
+
+/* Dark theme */
+body.dark-theme {
+  background-color: #333333; /* Dark background color */
+  color: #ffffff; /* Light font color */
+  /* Other dark theme styles */
+}
+
 
   @media screen and (max-width: 768px) {
     .topsections {
